@@ -1,3 +1,8 @@
+"use client";
+
+import { CssBaseline } from "@mui/material";
+import { Header } from "./component/Header";
+
 export default function RootLayout({
   children,
 }: {
@@ -8,7 +13,17 @@ export default function RootLayout({
       <head>
         <title>Azo HP</title>
       </head>
-      <body>{children}</body>
+      <body
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <CssBaseline />
+        <Header />
+        {children}
+        {/* <footer>This is Footer</footer> */}
+      </body>
     </html>
   );
 }
