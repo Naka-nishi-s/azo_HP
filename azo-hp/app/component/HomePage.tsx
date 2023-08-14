@@ -32,7 +32,10 @@ export const HomePage = () => {
           <AvatarIcon />
 
           <Box display={"flex"} alignItems={"center"} gap={2}>
-            <Icon link="https://www.youtube.com/channel/UCBw-a0HQnFZrQxrcbNqBdxg" type="red">
+            <Icon
+              link="https://www.youtube.com/channel/UCBw-a0HQnFZrQxrcbNqBdxg"
+              type="red"
+            >
               <YoutubeIcon color="error" sx={{ width: "60%", height: "60%" }} />
             </Icon>
 
@@ -77,6 +80,7 @@ export const HomePage = () => {
           pl="10%"
           pr="10%"
           width="100%"
+          zIndex="1"
         >
           <News />
           <Current />

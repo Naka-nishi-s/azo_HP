@@ -9,7 +9,7 @@ export const Current = () => {
       <Box>
         <iframe
           width="100%"
-          height="315"
+          height="400"
           src="https://www.youtube.com/embed/J5Hz9IHHTxU"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
