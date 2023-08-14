@@ -88,6 +88,9 @@ export const ThreeText = () => {
           if (mesh.position) renderer.render(scene, camera);
         };
 
+        // 明示的な初回レンダリング
+        renderer.render(scene, camera);
+
         // アニメーション開始
         animate();
       }
@@ -96,12 +99,24 @@ export const ThreeText = () => {
     // 対象のdivを取得
     containRef.current.appendChild(renderer.domElement);
 
+    // サイズ調整関数
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    // イベントリスナーの追加
+    window.addEventListener("resize", handleResize);
+
     return () => {
+      // イベントリスナーの削除
+      window.removeEventListener("resize", handleResize);
       renderer.dispose();
     };
   }, []);
 
   return (
-    <div ref={containRef} style={{ position: "absolute", zIndex: "-1" }}></div>
+    <div ref={containRef} style={{ position: "absolute", zIndex: "0" }}></div>
   );
 };
