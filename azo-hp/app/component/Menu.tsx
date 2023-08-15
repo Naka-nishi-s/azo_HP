@@ -28,7 +28,7 @@ const MenuList = ({ isOpen, appBarHeight }: any) => {
         bgcolor: "background.paper",
         boxShadow: 2,
         borderRadius: "4px",
-        width: "30%",
+        width: { xs: "100%", lg: "30%" },
         zIndex: "2",
         transform: isOpen ? "translateX(0)" : "translateX(-100%)",
         transition: "transform 0.3s ease-in-out",
