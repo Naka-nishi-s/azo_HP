@@ -9,21 +9,24 @@ export const ThreeText = () => {
   useEffect(() => {
     if (!containRef.current) return;
 
+    // innerWidth & innerHeight
+    const innerWidth = window.innerWidth;
+    const innerHeight = window.innerHeight;
+
     // シーン作成
     const scene = new THREE.Scene();
 
     // カメラ作成
     const camera = new THREE.PerspectiveCamera(
       60,
-      window.innerWidth / window.innerHeight,
+      innerWidth / innerHeight,
       0.1,
       1000
     );
 
     // ポジション変更(ズーム)
-    // camera.position.x = 20;
     camera.position.x = 50;
-    camera.position.y = -20;
+    camera.position.y = -22;
     camera.position.z = 55;
 
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -71,6 +74,14 @@ export const ThreeText = () => {
         // シーンにメッシュを追加
         scene.add(mesh);
 
+        if (innerWidth <= 1600) {
+          // ポジション変更
+          mesh.position.y = -20;
+        } else {
+          // ポジション変更
+          mesh.position.y = -10;
+        }
+
         // ポジション用
         let position = 0.01;
 
@@ -82,13 +93,15 @@ export const ThreeText = () => {
           mesh.position.y -= position;
 
           // 上下移動
-          if (mesh.position.y < -4) {
+          if (mesh.position.y < -18) {
             position = -0.01;
           }
 
-          if (mesh.position.y > 0) {
+          if (mesh.position.y > -14) {
             position = 0.01;
           }
+
+          // console.log(mesh.position.y);
 
           if (mesh.position) renderer.render(scene, camera);
         };
