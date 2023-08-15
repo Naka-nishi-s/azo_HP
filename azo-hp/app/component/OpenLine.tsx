@@ -1,95 +1,55 @@
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
+import { COLORS } from "./Colors";
 
-const LineTop = styled(Box)({
-  position: "absolute",
-  left: "100%",
-  right: "0%",
-  top: "50%",
-  height: ".6px",
-  backgroundColor: "black",
-  animation: "slideUp 2s forwards",
-  "@keyframes slideUp": {
-    "0%": {
-      left: "100%",
-      top: "50%",
-    },
-    "25%": {
-      left: "50%",
-      top: "50%",
-    },
-    "50%": {
-      left: "0%",
-      top: "50%",
-    },
-    "100%": {
-      left: "0%",
-      top: "0%",
-    },
-  },
-});
-
-const LineBottom = styled(Box)({
+export const LineTop = styled(Box)({
   position: "absolute",
   left: "0",
-  right: "100%",
-  bottom: "50%",
-  height: ".6px",
-  backgroundColor: "black",
-  animation: "slideDown 2s none",
-  "@keyframes slideDown": {
+  right: "0",
+  top: "0%",
+  height: "50%",
+  zIndex: "3",
+  backgroundColor: COLORS.white,
+  borderBottom: "1px solid black",
+  animation: "slideUp 1s forwards",
+  "@keyframes slideUp": {
     "0%": {
-      right: "100%",
-      bottom: "50%",
+      transform: "translateY(0%)",
+      opacity: 1,
     },
-    "25%": {
-      right: "50%",
-      bottom: "50%",
-    },
-    "50%": {
-      right: "0%",
-      bottom: "50%",
+    "99%": {
+      transform: "translateY(-100%)",
+      opacity: 1,
     },
     "100%": {
-      right: "0%",
-      bottom: "0%",
+      transform: "translateY(-100%)",
+      opacity: 0,
     },
   },
 });
 
-const Back = ({ children }: any) => {
-  return (
-    <Box
-      component="div"
-      bgcolor="#F1F3F4"
-      width="100%"
-      sx={{
-        clipPath: "inset(50% 0 50% 0)",
-        animation: "reveal 2s forwards",
-        "@keyframes reveal": {
-          "0%": {
-            clipPath: "inset(50% 0 50% 0)",
-          },
-          "50%": {
-            clipPath: "inset(50% 0 50% 0)",
-          },
-          "100%": {
-            clipPath: "inset(0% 0 0% 0)",
-          },
-        },
-      }}
-    >
-      {children}
-    </Box>
-  );
-};
-
-export const OpenLine = ({ HomePage }: any) => {
-  return (
-    <Box>
-      <Back>{HomePage}</Back>
-      <LineTop />
-      <LineBottom />
-    </Box>
-  );
-};
+export const LineBottom = styled(Box)({
+  position: "absolute",
+  left: "0",
+  right: "0",
+  top: "50%",
+  height: "50%",
+  zIndex: "3",
+  backgroundColor: "white",
+  borderTop: "1px solid black",
+  animation: "slideDown 1s forwards",
+  "@keyframes slideDown": {
+    "0%": {
+      transform: "translateY(0%)",
+      opacity: 1,
+    },
+    "99%": {
+      transform: "translateY(100%)",
+      opacity: 1,
+    },
+    "100%": {
+      transform: "translateY(100%)",
+      opacity: 0,
+    },
+  },
+});

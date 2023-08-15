@@ -1,6 +1,8 @@
 "use client";
 
 import { CssBaseline } from "@mui/material";
+import { COLORS } from "./component/Colors";
+import { Footer } from "./component/Footer";
 import { Header } from "./component/Header";
 
 export default function RootLayout({
@@ -17,12 +19,13 @@ export default function RootLayout({
         style={{
           display: "flex",
           flexDirection: "column",
+          backgroundColor: COLORS.gray,
         }}
       >
         <CssBaseline />
         <Header />
         {children}
-        {/* <footer>This is Footer</footer> */}
+        <Footer />
       </body>
     </html>
   );
