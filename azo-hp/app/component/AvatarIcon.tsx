@@ -38,7 +38,7 @@ export const AvatarIcon = () => {
       <Tooltip title="あぞちゃん">
         <Avatar
           alt="Azo"
-          src="/static/images/avatar/azo.jpg"
+          src="/images/avatar/azo.jpg"
           sx={{
             width: { xs: "200px", sm: "300px" },
             height: { xs: "200px", sm: "300px" },

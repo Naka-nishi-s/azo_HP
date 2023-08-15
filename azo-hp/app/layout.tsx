@@ -13,7 +13,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <title>Azo-channel</title>
+        <title>あぞちゃんねる</title>
+        <link rel="icon" href="/images/favicon/favicon.ico" />
       </head>
       <body
         style={{
