@@ -9,12 +9,16 @@ import { AvatarIcon } from "./AvatarIcon";
 import { Current } from "./Current";
 import { Icon } from "./Icon";
 import { News } from "./News";
-import { ThreeText } from "./ThreeText";
 
 export const HomePage = () => {
   return (
-    <main style={{ display: "flex", flexDirection: "column" }}>
-      <ThreeText />
+    <main
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        zIndex: "0",
+      }}
+    >
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -80,7 +84,6 @@ export const HomePage = () => {
           pl="10%"
           pr="10%"
           width="100%"
-          zIndex="1"
         >
           <News />
           <Current />

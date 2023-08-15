@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
+import { COLORS } from "./Colors";
 
 export const ThreeText = () => {
   const containRef: any = useRef(null);
@@ -35,7 +36,7 @@ export const ThreeText = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
 
     // 背景をグレーに変更
-    renderer.setClearColor("#F1F3F4", 1);
+    renderer.setClearColor(COLORS.gray, 1);
 
     // メッシュの作成
     const loader: any = new FontLoader();
@@ -52,10 +53,14 @@ export const ThreeText = () => {
         });
 
         // 側面（side）用の材料
-        const sideMaterial = new THREE.MeshBasicMaterial({ color: "#E0E0E0" });
+        const sideMaterial = new THREE.MeshBasicMaterial({
+          color: "#E0E0E0",
+        });
 
         // 表面（front & back）用の材料
-        const faceMaterial = new THREE.MeshBasicMaterial({ color: "#FFFFFF" });
+        const faceMaterial = new THREE.MeshBasicMaterial({
+          color: "#FFFFFF",
+        });
 
         // 側面と表面の2つの材料を配列として指定
         const materials = [faceMaterial, sideMaterial];
@@ -99,24 +104,12 @@ export const ThreeText = () => {
     // 対象のdivを取得
     containRef.current.appendChild(renderer.domElement);
 
-    // サイズ調整関数
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-
-    // イベントリスナーの追加
-    window.addEventListener("resize", handleResize);
-
     return () => {
-      // イベントリスナーの削除
-      window.removeEventListener("resize", handleResize);
       renderer.dispose();
     };
   }, []);
 
   return (
-    <div ref={containRef} style={{ position: "absolute", zIndex: "0" }}></div>
+    <div ref={containRef} style={{ position: "absolute", zIndex: "-1" }}></div>
   );
 };

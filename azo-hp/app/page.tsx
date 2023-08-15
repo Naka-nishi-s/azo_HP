@@ -1,7 +1,15 @@
 "use client";
 import { HomePage } from "./component/HomePage";
-import { OpenLine } from "./component/OpenLine";
+import { LineBottom, LineTop } from "./component/OpenLine";
+import { ThreeText } from "./component/ThreeText";
 
-export default function page() {
-  return <OpenLine HomePage={<HomePage />} />;
+export default function Page() {
+  return (
+    <>
+      <LineTop />
+      <LineBottom />
+      <HomePage />
+      <ThreeText />
+    </>
+  );
 }
