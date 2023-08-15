@@ -2,8 +2,8 @@ import { Box, Typography } from "@mui/material";
 
 export const Current = () => {
   return (
-    <Box flex={1}>
-      <Typography variant="h4" borderBottom="1px solid black">
+    <Box sx={{ flex: 1, display: "flex", flexDirection: "column", gap: 2 }}>
+      <Typography variant="h4" borderBottom="1px solid">
         オススメ
       </Typography>
       <Box>

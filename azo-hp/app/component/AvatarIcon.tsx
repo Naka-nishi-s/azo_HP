@@ -7,8 +7,8 @@ export const AvatarIcon = () => {
         alt="Azo"
         src="/static/images/avatar/azo.jpg"
         sx={{
-          width: "300px",
-          height: "300px",
+          width: { xs: "200px", sm: "300px" },
+          height: { xs: "200px", sm: "300px" },
           margin: 0,
         }}
       />

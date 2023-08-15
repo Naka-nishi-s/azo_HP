@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <title>Azo HP</title>
+        <title>Azo-channel</title>
       </head>
       <body
         style={{

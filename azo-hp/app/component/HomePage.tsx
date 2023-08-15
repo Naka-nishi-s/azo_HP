@@ -28,14 +28,21 @@ export const HomePage = () => {
         <Box
           display="flex"
           flexDirection="column"
-          gap={{ lg: 6 }}
+          gap={{ xs: 2, lg: 6 }}
           pt={{ xs: 8, lg: 16 }}
           mr={{ lg: "auto" }}
           ml={{ lg: "18%" }}
+          alignItems={"center"}
         >
           <AvatarIcon />
 
-          <Box display={"flex"} alignItems={"center"} gap={2}>
+          <Box
+            sx={{
+              alignItems: "center",
+              display: "flex",
+              gap: 2,
+            }}
+          >
             <Icon
               link="https://www.youtube.com/channel/UCBw-a0HQnFZrQxrcbNqBdxg"
               type="red"
@@ -69,8 +76,11 @@ export const HomePage = () => {
                   }}
                 >
                   <InstaIcon
-                    color="primary"
-                    sx={{ width: "60%", height: "60%" }}
+                    sx={{
+                      width: "60%",
+                      height: "60%",
+                      color: "#f32f3bcc",
+                    }}
                   />
                 </Avatar>
               </IconButton>
@@ -79,11 +89,14 @@ export const HomePage = () => {
         </Box>
 
         <Box
-          display="flex"
-          gap={{ xs: 2, sm: 4, lg: 16 }}
-          pl="10%"
-          pr="10%"
-          width="100%"
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", lg: "row" },
+            gap: { xs: 2, sm: 4, lg: 16 },
+            pl: "10%",
+            pr: "10%",
+            width: "100%",
+          }}
         >
           <News />
           <Current />
