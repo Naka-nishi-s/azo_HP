@@ -18,7 +18,7 @@ export const AvatarIcon = () => {
     // 10回以上のクリックで語録が出荷
     if (newCount >= 10) {
       // ランダム値を取得
-      const number = Math.floor(Math.random() * 8) + 1;
+      const number = Math.floor(Math.random() * 7) + 1;
       const talk = Goroku[number];
 
       // 語録をセット
@@ -31,7 +31,13 @@ export const AvatarIcon = () => {
   return (
     <>
       <Box
-        sx={{ backgroundColor: COLORS.white, p: "16px", borderRadius: "6%" }}
+        sx={{
+          backgroundColor: COLORS.white,
+          p: "12px 18px",
+          borderRadius: "6%",
+          fontSize: "1.2rem",
+          fontWeight: "bold",
+        }}
       >
         {talk}
       </Box>
